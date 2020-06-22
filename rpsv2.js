@@ -14,8 +14,6 @@ function computerPlay() {
     }
 }
 
-// console.log(computerPlay());
-
 function playerPlay () {
     let choice;
     do {
@@ -91,4 +89,51 @@ function game() {
     
 }
 
-game();
+const buttons = document.querySelectorAll("button");
+
+let player_score = 0;
+let cpu_score = 0;
+
+const pscore = document.querySelector("#pscore");
+const cscore = document.querySelector("#cscore");
+const result = document.querySelector("#result");
+
+pscore.textContent = player_score;
+cscore.textContent = cpu_score;
+
+function clearAll() {
+    player_score = 0;
+    cpu_score = 0;
+}
+
+function calculation() {
+    play = this.id;
+    res = playRound(play, computerPlay());
+
+    if (res < 0) cpu_score++;
+    else if (res > 0) player_score++;
+    else {player_score++; cpu_score++}
+
+    pscore.textContent = player_score;
+    cscore.textContent = cpu_score;
+    result.textContent = "";
+
+    if (player_score == 5) {
+        if (player_score == cpu_score) {
+            result.textContent = "IT'S A TIE!";
+            clearAll();
+            return;
+        }
+        result.textContent = "PLAYER WINS!";
+        clearAll();
+        return;
+    }
+    else if (cpu_score == 5) {
+        result.textContent = "COMPUTER WINS!";
+        clearAll();
+        return;
+    }
+    console.log(res);
+}
+
+buttons.forEach(btn => btn.addEventListener("click", calculation));

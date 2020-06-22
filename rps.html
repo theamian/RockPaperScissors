@@ -2,20 +2,23 @@
 <html>
     <head>
         <title>RockPaperScissors</title>
-        <!-- <script src="rpsv2.js"></script> -->
         <style>
             #scoreboard {
-                background-color: pink;
                 margin: auto;
-                width: 70%;
+                width: 55%;
                 display: flex;
             }
             #player, #cpu {
-                background-color: blue;
-                width: 50%
+                width: 50%;
+                display: flex;
+                justify-content: center;
+            }
+            #player > div, #cpu > div {
+                margin-left: 5px;
             }
             #button-ctn {
                 margin: auto;
+                margin-top: 5px;
                 width: 70%;
                 display: flex;
                 justify-content: center;
@@ -25,17 +28,31 @@
                 width: 25%;
                 font-family: monospace;
             }
+            #result {
+                width: 80%;
+                margin: auto;
+                font-size: larger;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
+        <br><br>
         <div id="scoreboard">
-            <div id="player"></div>
-            <div id="cpu"></div>
+            <div id="player">Player: 
+                <div id="pscore"></div>
+            </div>
+            <div id="cpu">Computer: 
+                <div id="cscore"></div>
+            </div>
         </div>
         <div id="button-ctn">
-            <button>rock</button>
-            <button>paper</button>
-            <button>scissors</button>
+            <button id="rock">rock</button>
+            <button id="paper">paper</button>
+            <button id="scissors">scissors</button>
         </div>
+        <br><br>
+        <div id="result"></div>
+        <script src="rpsv2.js"></script>
     </body>
 </html>
