@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RockPaperScissors</title>
+        <!-- <script src="rpsv2.js"></script> -->
+        <style>
+            #scoreboard {
+                background-color: pink;
+                margin: auto;
+                width: 70%;
+                display: flex;
+            }
+            #player, #cpu {
+                background-color: blue;
+                width: 50%
+            }
+            #button-ctn {
+                margin: auto;
+                width: 70%;
+                display: flex;
+                justify-content: center;
+            }
+            button {
+                margin: 0 5px;
+                width: 25%;
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="scoreboard">
+            <div id="player"></div>
+            <div id="cpu"></div>
+        </div>
+        <div id="button-ctn">
+            <button>rock</button>
+            <button>paper</button>
+            <button>scissors</button>
+        </div>
+    </body>
+</html>
